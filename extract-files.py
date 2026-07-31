@@ -18,8 +18,8 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/samsung/sm8250-common',
-    'hardware/qcom-caf/sm8250',
+    'device/samsung/sm7225-common',
+    'hardware/qcom-caf/sm7225',
     'hardware/qcom-caf/wlan',
     'hardware/samsung',
     'vendor/qcom/opensource/commonsys/display',
@@ -52,7 +52,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'sm8250-common',
+    'sm7225-common',
     'samsung',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

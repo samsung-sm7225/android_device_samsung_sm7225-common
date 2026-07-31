@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/sm8250-common
+COMMON_PATH := device/samsung/sm7225-common
 
 # A/B
 AB_OTA_UPDATER := false
@@ -29,8 +29,8 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Platform
-TARGET_BOARD_PLATFORM := kona
-TARGET_BOOTLOADER_BOARD_NAME := kona
+TARGET_BOARD_PLATFORM := lito
+TARGET_BOOTLOADER_BOARD_NAME := lito
 
 TARGET_NO_BOOTLOADER := true
 
@@ -73,10 +73,10 @@ BOARD_KERNEL_PAGESIZE      := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 TARGET_KERNEL_NO_GCC := true
-TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
+TARGET_KERNEL_SOURCE := kernel/samsung/sm7225
 TARGET_KERNEL_CONFIG := \
-    vendor/kona-perf_defconfig \
-    vendor/samsung/kona-sec-common.config
+    vendor/lito-perf_defconfig \
+    vendor/samsung/lito-sec-common.config
 
 # Additional root folders
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
@@ -168,7 +168,7 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung_sm8250
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung_sm7225
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # Security patch

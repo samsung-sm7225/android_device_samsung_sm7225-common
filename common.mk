@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
-    android.hardware.audio@7.0-impl.samsung-sm8250 \
+    android.hardware.audio@7.0-impl.samsung-sm7225 \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.soundtrigger@2.3-impl \
     audio.r_submix.default \
@@ -125,12 +125,12 @@ $(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
 
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_profiles_kona.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_kona.xml \
-    $(LOCAL_PATH)/configs/media/media_profiles_kona.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    $(LOCAL_PATH)/configs/media/media_profiles_lito.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_lito.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_lito.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_profiles_kona_tablet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_kona.xml \
-    $(LOCAL_PATH)/configs/media/media_profiles_kona_tablet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    $(LOCAL_PATH)/configs/media/media_profiles_lito_tablet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_lito.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_lito_tablet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 endif
 
 PRODUCT_PACKAGES += \
@@ -219,7 +219,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung
 
-$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/sm8250-common:libskeymaster4device)
+$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/sm7225-common:libskeymaster4device)
 
 # Lineage Health
 PRODUCT_PACKAGES += \
@@ -390,4 +390,4 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
 
 # Inherit proprietary blobs
-$(call inherit-product, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
+$(call inherit-product, vendor/samsung/sm7225-common/sm7225-common-vendor.mk)
